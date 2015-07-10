@@ -67,6 +67,34 @@ describe('Numbrify', function() {
     });
   });
 
+  describe('numbrify an array of objects', function () {
+    var testData = [
+      {"name": "foo", "age": "42"},
+      {"name": "bar", "age": "32"},
+      {"name": "baz", "age": "22"}
+    ];
+    var testDataCopy = JSON.parse(JSON.stringify(testData));
+
+    var result = testData.map(function(datum){
+      return Numbrify(datum);
+    });
+
+    it('should not modify original data', function () {
+      assert.deepEqual(testData, testDataCopy);
+    });
+
+    it('should shallow numbrify', function () {
+      assert.strictEqual(result[0].age, 42);
+      assert.strictEqual(result[1].age, 32);
+      assert.strictEqual(result[2].age, 22);
+
+      assert.strictEqual(result[0].name, "foo");
+      assert.strictEqual(result[1].name, "bar");
+      assert.strictEqual(result[2].name, "baz");
+    });
+  });
+
+
   describe('pass through other types', function () {
     var testData = new Date();
     var result = Numbrify(testData);

@@ -45,17 +45,14 @@
 
     for (var prop in object) {
       if (object.hasOwnProperty(prop)) {
-        potential = Number(object[prop]);
-        if (isNaN(potential)) {
-          result[prop] = object[prop];
-        } else {
-          result[prop] = potential;
-        }
+        result[prop] = toNumber(object[prop]);
       }
     }
     return result;
   }
 
+  // Helper function to convert a value into a Number
+  // if it can be converted to one.
   function toNumber(object) {
     var potential = Number(object);
     if (isNaN(potential)) {
