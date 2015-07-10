@@ -38,6 +38,8 @@ result = data.map(function(datum){
 //   {"name": "foo", "age": 22}
 // ]
 
+// The above could also be written as
+result = data.map(Numbrify);
 ```
 
 # Development
