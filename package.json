@@ -2,7 +2,8 @@
   "name": "numbrify",
   "version": "1.0.0",
   "description": "A utility to convert number-like strings in objects/arrays into numbers.",
-  "main": "index.js",
+  "repository": "https://github.com/tafsiri/numbrify",
+  "main": "src/index.js",
   "scripts": {
     "test": "mocha test/",
     "test:watch": "npm run test -- -w",
