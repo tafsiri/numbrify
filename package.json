@@ -1,6 +1,6 @@
 {
   "name": "numbrify",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "A utility to convert number-like strings in objects/arrays into numbers.",
   "repository": "https://github.com/tafsiri/numbrify",
   "main": "dist/numbrify.js",
