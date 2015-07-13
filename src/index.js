@@ -11,7 +11,7 @@
  *
  * @return a copy of the object/array with the converted properties.
  */
-export default function Numbrify(object) {
+export default function Numbrify(object, deep = true) {
   var result;
   var potential;
   if (Array.isArray(object)) {
@@ -28,15 +28,26 @@ export default function Numbrify(object) {
 
   for (var prop in object) {
     if (object.hasOwnProperty(prop)) {
-      result[prop] = toNumber(object[prop]);
+      var val = object[prop];
+      if (deep && typeof val === 'object') {
+        result[prop] = Numbrify(val);
+      } else {
+        result[prop] = toNumber(val);
+      }
+
     }
   }
   return result;
 }
 
 // Helper function to convert a value into a Number
-// if it can be converted to one.
+// if it can be converted to one. Will only attempt
+// the conversion on strings.
 function toNumber(object){
+  if (typeof object !== "string") {
+    return object;
+  }
+
   var potential = Number(object);
   if (isNaN(potential)) {
     return object;
