@@ -1,0 +1,23 @@
+{
+  "name": "numbrify",
+  "version": "2.0.0",
+  "homepage": "https://github.com/tafsiri/numbrify",
+  "authors": [
+    "Yannick Assogba <yassogba@gmail.com>"
+  ],
+  "description": "A utility to convert number-like strings in objects/arrays into numbers.",
+  "main": "dist/numbrify.js",
+  "moduleType": [
+    "amd",
+    "globals",
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
